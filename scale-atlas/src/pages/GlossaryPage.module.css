@@ -1,0 +1,209 @@
+.page {
+  padding: 2.5rem 0 4rem;
+  min-height: calc(100vh - 56px);
+}
+
+.header { margin-bottom: 1.5rem; }
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  max-width: 46rem;
+  line-height: 1.6;
+}
+
+/* ── Search ── */
+.searchBar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.6rem 1rem;
+  max-width: 480px;
+  margin-bottom: 1rem;
+  transition: border-color 0.15s;
+}
+
+.searchBar:focus-within { border-color: var(--accent); }
+.searchIcon { flex-shrink: 0; color: var(--text-muted); display: flex; }
+
+.searchInput {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 0.9rem;
+  font-family: var(--font);
+  color: var(--text);
+}
+
+.searchInput::placeholder { color: var(--text-muted); }
+
+.clearBtn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  padding: 0.2rem;
+  display: flex;
+  min-width: 24px;
+  min-height: 24px;
+  align-items: center;
+  justify-content: center;
+}
+
+.clearBtn:hover { color: var(--text); }
+
+/* ── Category chips ── */
+.cats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.catBtn {
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-family: var(--font);
+  cursor: pointer;
+  transition: all 0.12s;
+}
+
+.catBtn:hover { border-color: var(--accent); color: var(--accent); }
+
+.catActive {
+  background: var(--accent-light);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.count {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* ── Groups ── */
+.group { margin-bottom: 2.5rem; }
+
+.groupTitle {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--text);
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--border);
+  margin-bottom: 1.25rem;
+}
+
+.list { display: flex; flex-direction: column; gap: 1.5rem; }
+
+.entry { scroll-margin-top: 72px; }
+
+.term {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.also {
+  font-family: var(--font);
+  font-size: 0.75rem;
+  font-style: italic;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.def {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  max-width: 46rem;
+  border-left: 2px solid var(--border);
+  padding-left: 0.9rem;
+}
+
+.seeAlso {
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
+}
+
+.xref {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.xref:hover { border-bottom-color: var(--accent); text-decoration: none; }
+
+/* ── Live scale examples ── */
+.examples {
+  margin-top: 0.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.examplesLabel {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-right: 0.15rem;
+}
+
+.exampleLink {
+  font-size: 0.75rem;
+  padding: 0.12rem 0.45rem;
+  background: var(--tag-bg);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  text-decoration: none;
+  transition: background 0.12s, color 0.12s;
+}
+
+.exampleLink:hover {
+  background: var(--accent-light);
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.more { font-size: 0.72rem; color: var(--text-muted); }
+
+.empty {
+  padding: 3rem;
+  text-align: center;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (max-width: 600px) {
+  .title { font-size: 1.85rem; }
+  .def { padding-left: 0.7rem; }
+}
