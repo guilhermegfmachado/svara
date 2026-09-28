@@ -47,22 +47,29 @@ export default function GlossaryPage({ scales = [] }) {
           </p>
         </header>
 
-        <div className={styles.searchBar}>
-          <span className={styles.searchIcon}><SearchIcon size={15} /></span>
+        <label className={styles.searchBar}>
+          <span className={styles.searchIcon} aria-hidden="true"><SearchIcon size={15} /></span>
           <input
-            type="text"
+            type="search"
             className={styles.searchInput}
             placeholder="Search terms and definitions…"
             aria-label="Search glossary"
+            enterKeyHint="search"
             value={query}
             onChange={e => setQuery(e.target.value)}
+            onKeyDown={e => { if (e.key === 'Enter') e.currentTarget.blur() }}
           />
           {query && (
-            <button className={styles.clearBtn} onClick={() => setQuery('')} aria-label="Clear search">
+            <button
+              type="button"
+              className={styles.clearBtn}
+              onClick={() => setQuery('')}
+              aria-label="Clear search"
+            >
               <CloseIcon size={11} />
             </button>
           )}
-        </div>
+        </label>
 
         <div className={styles.cats}>
           <button

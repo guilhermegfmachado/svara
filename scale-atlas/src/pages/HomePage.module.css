@@ -262,3 +262,19 @@
   border-bottom-color: var(--accent);
   text-decoration: none;
 }
+
+/* Whole bar is a <label>, so clicking the icon or padding focuses the input */
+.searchBar { cursor: text; }
+
+/* Suppress WebKit's native search affordances; we render our own clear button */
+.searchInput[type="search"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+.searchInput[type="search"]::-webkit-search-decoration,
+.searchInput[type="search"]::-webkit-search-cancel-button,
+.searchInput[type="search"]::-webkit-search-results-button,
+.searchInput[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+  display: none;
+}

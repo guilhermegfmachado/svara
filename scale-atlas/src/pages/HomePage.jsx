@@ -54,20 +54,29 @@ export default function HomePage({ scales }) {
             <span className={styles.heroStat}><strong>{regionCount}</strong> world regions</span>
             <span className={styles.heroStat}><strong>{cultureCount}</strong> cultures</span>
           </div>
-          <div className={styles.searchBar}>
-            <span className={styles.searchIcon}><SearchIcon size={15} /></span>
+          <label className={styles.searchBar}>
+            <span className={styles.searchIcon} aria-hidden="true"><SearchIcon size={15} /></span>
             <input
-              type="text"
+              type="search"
               placeholder="Search scales, cultures, regions…"
               aria-label="Search scales"
+              enterKeyHint="search"
               value={query}
               onChange={e => setQuery(e.target.value)}
+              onKeyDown={e => { if (e.key === 'Enter') e.currentTarget.blur() }}
               className={styles.searchInput}
             />
             {query && (
-              <button className={styles.clearBtn} onClick={() => setQuery('')}><CloseIcon size={11} /></button>
+              <button
+                type="button"
+                className={styles.clearBtn}
+                onClick={() => setQuery('')}
+                aria-label="Clear search"
+              >
+                <CloseIcon size={11} />
+              </button>
             )}
-          </div>
+          </label>
         </div>
       </header>
 
