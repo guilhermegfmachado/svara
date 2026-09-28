@@ -65,35 +65,7 @@
 
 .clearBtn:hover { color: var(--text); }
 
-/* ── Category chips ── */
-.cats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  margin-bottom: 1rem;
-}
-
-.catBtn {
-  padding: 0.3rem 0.7rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  background: var(--bg);
-  color: var(--text-muted);
-  font-size: 0.78rem;
-  font-family: var(--font);
-  cursor: pointer;
-  transition: all 0.12s;
-}
-
-.catBtn:hover { border-color: var(--accent); color: var(--accent); }
-
-.catActive {
-  background: var(--accent-light);
-  border-color: var(--accent);
-  color: var(--accent);
-  font-weight: 600;
-}
-
+/* ── Count ── */
 .count {
   font-size: 0.78rem;
   color: var(--text-muted);
@@ -223,3 +195,192 @@
   -webkit-appearance: none;
   display: none;
 }
+
+/* ── Toolbar: search + A-Z/topic toggle ── */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+.toolbar .searchBar { margin-bottom: 0; flex: 1 1 320px; }
+
+.modeToggle {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.modeBtn {
+  padding: 0.45rem 0.85rem;
+  background: var(--bg);
+  border: none;
+  font-family: var(--font);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+}
+
+.modeBtn + .modeBtn { border-left: 1px solid var(--border); }
+.modeBtn:hover { color: var(--accent); }
+.modeActive { background: var(--accent); color: #fff; font-weight: 600; }
+.modeActive:hover { color: #fff; }
+
+/* ── A–Z jump bar ── */
+.azBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.1rem;
+  padding: 0.5rem 0.6rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 0.9rem;
+  position: sticky;
+  top: 56px;
+  z-index: 20;
+}
+
+.azLink {
+  min-width: 26px;
+  min-height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+}
+
+.azLink:hover { background: var(--accent-light); text-decoration: none; }
+
+.azDim {
+  color: var(--text-muted);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* ── Filters panel ── */
+.filters {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  padding: 0.5rem 0.9rem;
+  margin-bottom: 0.9rem;
+}
+
+.filtersSummary {
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  padding: 0.2rem 0;
+  list-style: revert;
+}
+
+.filtersSummary:hover { color: var(--accent); }
+
+.filterGroup {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.7rem 0 0.2rem;
+}
+
+.filterLabel {
+  flex: 0 0 5rem;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding-top: 0.35rem;
+}
+
+.chips { display: flex; flex-wrap: wrap; gap: 0.3rem; flex: 1; min-width: 0; }
+
+.chip {
+  padding: 0.25rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: var(--text-muted);
+  font-size: 0.74rem;
+  font-family: var(--font);
+  cursor: pointer;
+  transition: all 0.12s;
+}
+
+.chip:hover { border-color: var(--accent); color: var(--accent); }
+.chipActive { background: var(--accent-light); border-color: var(--accent); color: var(--accent); font-weight: 600; }
+
+.resetBtn {
+  margin-left: 0.6rem;
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-family: var(--font);
+  font-size: 0.78rem;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* ── Group headings ── */
+.groupTitle {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  scroll-margin-top: 104px;
+}
+
+.groupCount {
+  font-family: var(--font);
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+/* ── Term head: name, language, literal meaning ── */
+.termName { font-family: var(--font-heading); }
+
+.lang {
+  font-family: var(--font);
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-light);
+  padding: 0.08rem 0.35rem;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.02em;
+}
+
+.lit {
+  font-family: var(--font);
+  font-size: 0.74rem;
+  font-style: italic;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+@media (max-width: 600px) {
+  .azBar { top: 56px; gap: 0.05rem; padding: 0.4rem; }
+  .azLink { min-width: 23px; min-height: 26px; font-size: 0.75rem; }
+  .filterLabel { flex: none; padding-top: 0; }
+  .toolbar .searchBar { flex: 1 1 100%; }
+}
+
+/* A–Z bar entries are buttons (HashRouter makes #hrefs unsafe) */
+.azLink {
+  background: none;
+  border: none;
+  font-family: var(--font);
+  cursor: pointer;
+}
+.azLink:disabled { cursor: default; }

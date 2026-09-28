@@ -2,19 +2,8 @@
 // glossary page runs it over the scale collection to show live examples, so
 // the links can never drift out of sync with the data.
 
-export const GLOSSARY_CATEGORIES = [
-  'Fundamentals',
-  'Scale Structure',
-  'Western Harmony',
-  'Indian Classical',
-  'Arabic & Turkish',
-  'East & Southeast Asian',
-  'Guitar',
-  'Rhythm',
-  'Tuning & Temperament',
-]
 
-export const GLOSSARY = [
+export const CORE = [
   // ── Fundamentals ──────────────────────────────────────────
   { term: 'Scale', cat: 'Fundamentals',
     def: 'An ordered set of pitches spanning an octave, used as the raw material for melody. Scales are usually described by the pattern of intervals between consecutive notes rather than by absolute pitch, which is why the same scale can start on any note.' },
